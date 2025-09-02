@@ -2,8 +2,8 @@ HW 0 - due today (what to submit?)
 
 HW 1 - due Tuesday, September 2
     be sure to explain your reasoning when asked
-    on logic puzzles, should be clear why your answer is the only  
-        one
+    on logic puzzles, should be clear why your answer is the 
+        only one
 
 
 ////////////////////////////////////////////////////////
@@ -40,10 +40,8 @@ else {
 }
 
 --> when is the first (if) condition false?
-x >= 3 && y <= 4
 
---> is it possible for "statements2" to execute?
-no because y cannot be 7
+--> is it possible for "statements2" to execute?7
 
 
 
@@ -74,8 +72,6 @@ Bill: Mae is a knight
 Suppose Sarah is a knight. Then from her statement, Bill would have to be a knight, and from his statement, Mae would have to be a knight. 
 (LIE b/c Mae's statement is impossible (Mae can't be a knave))
 
-Suppose instead Sarah is a knave. Then in a similar way from the statements, Bill and Mae would have to be knaves. 
-(This is right because Mae is lying about what she would say. Bill would lie and say she's a knight, but she lies about what he would say)
 
     
 
@@ -93,11 +89,6 @@ Lion says: "Yesterday was one of my lying days."
 Unicorn says: "Yesterday was one of my lying days, too."
 
 What day is it?
-
-Sunday? No, Lion couldn't say that
-Tuesday/Wednesday/Friday/Saturday? Whoever is lying also lied the day before but should still be lying about it.
-Monday? Lion is true and Unicorn is false
-Thursday? Both Lion and Unicorn are telling the truth
 
 
 
@@ -119,7 +110,8 @@ The second one says: "I'm Tweedledee."
 Which is which? What day is it?
 Any day but Sunday, one lies one tells truth. Would both give same name.
 
-Must be Sunday. They are who they say they are.
+
+
 
 
 
@@ -147,18 +139,14 @@ You don't know what day it is, but are sure that it isn’t
 The first one says: "Tweedledee owns the rattle."
 The second one says: "I'm Tweedledee!"
 
-Who gets the rattle? The first twin
-
-Suppose the first twin is telling the truth, Tweedledee owns the rattle. The second twin (Tweedledum) is lying. Then Tweedledee is the first twin.
-We should give the rattle to the first twin.
-
-Suppose the first twin is lying, then Tweedledum owns the rattle. The second twin (Tweedledee) must be telling the truth. 
-Tweedledum must be the first one, so give it to Tweedledum.
+Who gets the rattle?
 
 Who is who?
-Can't figure it out
+
 
 ///////////////////////////////////////////
+
+(do for practice)
 
 Based on Shakespeare's "Merchant of Venice".
 
@@ -205,6 +193,7 @@ Cheryl privately tells Bernard her birthday day (number).
 Albert says: "I don't know when Cheryl's birthday is,
     but I know Bernard doesn't know too."
 
+
 Bernard says: "At first I didn't know when Cheryl's
     birthday is, but now I do."
 
@@ -213,15 +202,7 @@ Albert says: "Then I also know when Cheryl's birthday is."
 
 
 When is it?
-July 16
 
-May: 15, 16, 19
-June: 17, 18
-July: 14, 16
-August: 14, 15, 17
-
-Can't be May or June because they have unique numbers (18 and 19)
-The goal is about finding the non-unique number, then process of elimination
 
 
 
@@ -245,13 +226,19 @@ Basic operations:
 Basic logic gates (draw on board)
 
 
+
+
 gates still used to design circuits
 
 
 why do we care about equivalent circuits?
 
+A smaller (equivalent) circuit might take less space and
+cost less money
 
-what about programming?
+
+what about programming? A (smaller/simpler) equivalent program
+might be easier to read and maintain, and might be faster to run.
 
 ///////////////////////////////////////////////////
 
@@ -262,10 +249,10 @@ AND:
 
 p q  #  p ∧ q
 --------------
-T T  #    T
-T F  #    F
-F T  #    F 
-F F  #    F
+T T  #    
+T F  #    
+F T  #     
+F F  #    
 
 
 OR:
@@ -301,10 +288,10 @@ Otherwise we have not.
 
 p q  #  p → q
 --------------
-T T  #    T
-T F  #    F 
-F T  #    T (This and the one below are true because you STILL didn't break your promise)
-F F  #    T
+T T  #    
+T F  #      
+F T  #    
+F F  #     
 
 /////////////////////////////////////////
 
@@ -321,7 +308,11 @@ Design circuits for:
 
 p XOR q (with just the gates we've seen, not a specific XOR gate)
 
+(We drew these two circuits on the board)
 
+////////////////////////////////////
+
+<-- Stopped here, will continue on Tuesday
 
 /////////////////////////////////////
 
