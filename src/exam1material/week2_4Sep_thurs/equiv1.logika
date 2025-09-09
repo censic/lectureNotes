@@ -11,3 +11,7 @@ F F #   T
 Contingent
 T: [T T] [F T] [F F]
 F: [T F]
+
+Contingent
+T: [T T] [F T] [F F]
+F: [T F]

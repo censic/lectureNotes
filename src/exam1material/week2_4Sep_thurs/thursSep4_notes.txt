@@ -23,6 +23,7 @@ p ∧ q ∧ r → ¬p ∨ q → r
 
 Top-level operator: leftmost →
 
+top-level operator: -> on the left
 
 
 Example: another circuit
@@ -35,7 +36,6 @@ p OR q AND NOT p
 //////////////////////////////////////////
 
 Propositional logic.
-
 
 - a set of *propositional atoms* (statements that can be T/F)
     --> these will be our boolean variables in logic statements
@@ -64,11 +64,15 @@ z != 7 && str.contains(sub)
 p: z == 7
 q: str.contains(sub)
 
+p: z == 7
+q: str.contains(sub)
+
 --> express in propositional logic
 
 ¬p ∧ q
 
-
+////////////
+∧ ∨ ¬ →
 ////////////////////////////////////////
 
 Example:
@@ -84,9 +88,11 @@ q: You have taken the prerequisite
 
 --> translate to propositional logic:
 
+¬q → ¬p
+
+
 really saying:
 
-¬q → ¬p
 
 If you haven't taken the prerequisite, then you can't enroll for the course
 
@@ -96,8 +102,10 @@ What is the *contrapositive* of our statement?
 
 p → q
 
-If you have enrolled in the course, you have taken the prerequisite
 
+
+If you have enrolled in the course, then you have taken the
+prerequisite.
 
 
 //////////////////////////////////////////
@@ -117,13 +125,14 @@ Propositional atoms?
 p: x <= 2
 q: y >= 0
 r: z == 17
+s: answer == 25
+
+p: x <= 2
+q: y >= 0
+r: z == 17
 s: answer = 25
 
 Translation? (if ... then ...)
-
-if (both conditions were true) then answer would be 25
-
-(p V q) ∧ ¬r → s
 
 
 //////////////////////////////////
@@ -140,7 +149,7 @@ p → q
 
 2) I'm not at least 16 years old or I can drive a car.
 
-¬p V q
+
 
 --> are they saying the same thing?
 
@@ -149,8 +158,9 @@ Yes, because they are both false in the same siutation (I'm at least 16 and I ca
 
 --> could we PROVE it? (equiv1.logika, equiv2.logika)
 
-For every possible truth assignment, the two statements
-have the same output. <== NEED TO EXPLAIN THIS IN THIS WAY FOR THE EXAM TO AVOID DOCKING POINTS
+
+
+
 
 
 
@@ -174,6 +184,7 @@ How could we express the NEGATION (Negation = opposite / reverse)
 
 if (a != r || a != 5)
 
+if (a != 4 && a != 5)
 
 
 
@@ -186,6 +197,7 @@ if (a == 4 && b == 5) {
 How could we express the NEGATION
 (i.e., what condition would be true for the "else")?
 
+if (a != 4 || b != 5)
 
 
 
@@ -194,15 +206,14 @@ How could we express the NEGATION
 
 DeMorgan's laws in propositional logic:
 
-¬(p ∨ q) is equivalent to... ¬p ∧ ¬q 
+¬(p ∨ q) is equivalent to... 
 
-¬(p ∧ q) is equivalent to... ¬p V ¬q
+¬(p ∧ q) is equivalent to... 
 
 
 --> how can we prove the first of DeMorgan's laws?
 
-For every possible truth assignment, the two statements
-had the same output.
+
 
 
 
@@ -218,9 +229,7 @@ if (Character.isDigit(letter) || num < 10) {
 --> how would we negate it without using a ! operator?
     also no extra ()
 
-if (Character.isDigit(letter) == false || num >= 10) {
-    statements
-}
+
 
 ///////////////////////
 
@@ -231,16 +240,6 @@ if ((y >= 4 && num != 14) || x > 0) {
 }
 
 negate it:
-
-if (!((y >= 4 && num != 14) || x > 0)) {
-    statements
-}
-
-if (!(y >= 4 && num != 14) && x <= 0) {
-    statements
-}
-
-if ((y < 4 || num == 14) && x <= 0)
 
 
 ///////////////////////
@@ -263,28 +262,27 @@ associative laws
 
     (2 + 3) + 5 = 2 + (3 + 5)
 
-    (p ∧ q) ∧ r     vs      p ∧ (q ∧ r) 
+    (p ∧ q) ∧ r     vs      ???   
 
 
     (p → q) → r     vs      p → (q → r)
 
     how to show logically equivalent? 
 
-    Implies is NOT associative
+    how to show NOT equivalent? 
 
-    how to show NOT equivalent? find one truth assignment where the two truth statements have different output
-
-    (p → q) → r is false
-    p → (q → r) is true
-
-    p = F
-    q = T
-    r = F
-
-    They are not equivalent because the two statements have different outputs on the above truth assignment.
 
 
 commutative laws 
+
+p ∧ q   vs  q ∧ p
+
+
+p → q   vs  q → p 
+
+
+p = T, q = F makes the first statement false but the second 
+statement true, so implies is not commutative.
 
 p ∧ q vs q ∧ p
 
@@ -294,7 +292,8 @@ p = T, q = F makes the first statement (of the implies operator) false but the s
 
 
 --> you may still be asked to demonstrate these with
-    truth tables or prove them with natural deduction (coming soon)
+    truth tables or prove them with natural deduction 
+    (coming soon)
 
 
 //////////////////////////
@@ -302,15 +301,14 @@ p = T, q = F makes the first statement (of the implies operator) false but the s
 Summary of equivalence.
 
 How do we prove two statements ARE equivalent?
+    two truth tables
+    show that for every truth assignment, they have the same
+    output
 
 two truth tables
 want to show for every truth assignemnt that they have the same output
 
 How do we prove two statements are NOT equivalent?
-find one truth assignment that 
-is a couterexample
-the truth assignment makes one statement output true
-and the other output false
 
 
 
@@ -326,35 +324,39 @@ Contrapositive (equivalent to the above): ¬q → p
 q V p
 
 
+¬q → p
+p V q
+
 //////////////////////////
 
 Satisfiability.
 
-- definition: a logical statement is satisfiable if I can find a truth
-assignment where the statement outputs true
+- definition: 
 
 
 - what kind of statement is satisfiable? what kind is not?
-
-Satisfiable: Tautology and Contingent
-Unsatisfiable: Contradictory
 
 
 - is this satisfiable?
 
     (p ∨ ¬q) ∧ (q ∨ ¬r) ∧ (r ∨ ¬p)
 
-    YES
-
-All you need to do is find ONE truth assignment to determine if its satisfiable
 
 
+makes statement output true
 
 
-to show a statement is satisifiable: Only need one truth assignment
+
+to show a statement is satisifiable: 
 
 to show a statement is NOT satisfiable: Need the full truth table, classified as Contradictory (outputs false for every truth assignment)
 
+full truth table, classified as contradictory
+(outputs false for every truth assignment)
+
+////////////////////////////
+
+<--- stopped here, will continue on Tuesday
 
 ////////////////////////////
 
