@@ -4,12 +4,13 @@ HW 3 due tonight - don't add parentheses
 Problem 6:
 
 
+//(p ∨ q) ∨ r
+//(r ∨ q) ∨ p
 p ∨ q ∨ r |- r ∨ q ∨ p
 
 vs
 
 p ∨ (q ∨ r)  
-
 
 /////////////
 
@@ -37,8 +38,10 @@ statement2
 
 
 
+Proof 1: statement1 |- statement2
 
 
+Proof 2: statement2 |- statement1
 
 ////////////////////////////////
 
@@ -58,6 +61,8 @@ if (extraCredit == true || grade < 90) {
         //do stuff
     }
 }
+
+if (extraCredit == true || (grade >= 80 && grade < 90))
 
 
 --> how does the distributive law tell us we can rewrite 
@@ -134,9 +139,9 @@ See Canvas announcement for list of topics.
 How to prove two propositional logic statements are 
 equivalent?
 
-    Approach 1: Build a truth table (2 of them) and for each truth assignment, they have the same output
+    Approach 1:
 
-    Approach 2: Deduction (2 of them). Statement 1 as the premise and Statement 2 as the conclusion.
+    Approach 2:
 
 
 
@@ -144,14 +149,14 @@ equivalent?
 How to prove propositional logic statements are 
 NOT equivalent?
 
+find ONE counterexample (a truth assignment) where the
+two statements have different output
+
 Find ONE counterexample (a truth assignment) where the two statements have different output
 CANNOT use deduction to prove they aren't equivalent.
 
 
 What is satisfiability? 
-There exist at least one trutyh assignment that makes the statement output true
-ARE satisfiable: Contingent  (some true / false) and Tautology (all true)
-NOT satisfiable: Contradictory (all false)
 
 Prove satisfiability: Only need ONE truth assignment
 Prove NOT satisfiable: Full truth table and should be contradictory
@@ -159,18 +164,11 @@ Prove NOT satisfiable: Full truth table and should be contradictory
 
 - Determining whether an argument is valid or invalid
     (what is an argument?)
-    Premise, Conclusion
-    valid: Every time all premises are true, then the conclusion is also true
+    valid: 
 
     how prove valid?
-    1) Make a "combined" truth table, make sure every truth 
-    assignmentthat makes all premises true also makes the conclusion true
-
-    2) Deduction
 
     how prove invalid?
-    Find one truth assignment that makes all premises true 
-    but the conclusion false
 
 
 /////////////////////////////////////////
