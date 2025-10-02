@@ -1,4 +1,5 @@
 HW 4 due tonight
+    (remember to check link format)
 
 HW 5 will be posted after class
 
@@ -20,8 +21,23 @@ p → q   equivalent to   ¬p ∨ q
 
 p → q  ⊢  ¬p ∨ q
 
+    Try PbC. Assume ¬(¬p ∨ q)
+        Goal: ¬p (if we had that, could contradict with assume)
+        Use NegI to try to get ¬p
+            Assume p 
+            goal: F
+
+        goal: F (contradiction)
+     
+
+
 
 ¬p ∨ q   ⊢  p → q
+
+use ImplyI to try to get p → q
+    Assume p 
+        try OrE on premise to get q in both cases 
+    Goal q 
 
 
 /////////////////////////
@@ -32,10 +48,25 @@ HW 4 problem 7
 
 
 ¬(p → q)  ⊢  p ∧ ¬q
+    try PbC to get p ∧ ¬q
+        Assume ¬(p ∧ ¬q)
+
+        Try to use ImplyI to get p → q to contradict with premise
+            Assume p 
+                Try to use PbC to get our goal of q 
+                    Assume ¬q
+
+                    goal: F 
+
+            goal: q
+
+        goal: F
+
 
 
 p ∧ ¬q   ⊢   ¬(p → q)
 
+Use NegI to get conclusion. Assume p → q
 
 
 /////////////////////////
@@ -44,63 +75,30 @@ How do we approach proofs?
 
 1. Write out all the premises
 2. Extract all information from premises 
-        AND statement - break apart both sides
-        IMPLIES statement - see if we have or can get
-                        the IF part, then use ImplyE
 3. Look at what you are trying to prove (what do we look for in goal/conclusion?)
-    A: Top-level operator
 
-    ∧ - try to prove both sides separately, then put them together 
+    ∧ - 
 
-    ∨ - i) Can you get one of the two sides? Use OrI to get conclusion.
-        ii) See if you have an OR statement as a premise or 
-        a previous claim. If you do, use OrE.
-        iii) If nothing else works, try PbC on the whole conclusion.
+    ∨ - 
 
-    → - open ImplyI subproof and assume the IF part and try to get
-        to the then part (RHS).
+    → - 
 
-    ¬(something) - Open NegI subproof. Assume "something".
-        Goal: F
+    ¬(something) - 
 
-    just a propositional atom? like p.
-    find where it appears in a premise or previous claim. think about 
-    what you would need to do to extract it.
-
-    Try OrE if an OR statement is available.
-
-    If nothing works, try PbC. Assume !p, then try to get F.
+    just a propositional atom? 
 
 
-After each claim - see if there is anything else to
-    extract. Scan earlier claims to see if you can put 
-    them together with new claims.
+After each claim - 
 
 
 
-Inside a subproof - write down what your goal is.
-NEVER open a subproof WITHOUT writing your goal.
-    Here's all the one's you need to open a subproof for: OrE, ImplyI, PbC, NegI
+Inside a subproof - 
 
-    OrE - need to already have an OR statement.
-        Your goal in both subproofs is whatever your 
-        current goal is when you open those subproofs.
-
-    ImplyI - have to assume the LHS. Goal must be the RHS.
-
-    PbC - assume must be a NOT statement. Goal is F.
-        Afterwards must conclude the statement without the not.
-
-    NegI - assume whatever. Goal must be F.
-        Afterwards, must conclude the !(assume).
 
 
 Doesn't fit a pattern or doesn't work out from above?
 
-    OrE, PbC
 
-    If you get stuck in an OrE subproof and can't get to your
-    goal, see if you can get F and then use BottomE.
 
 
 --> when do we open a subproof?
@@ -130,7 +128,7 @@ p ∨ ¬p
 
 
 What would a theorem be in a truth table?
-    tautology
+tautology
 
 
 
@@ -170,7 +168,9 @@ I could prove things that are not true.
 
 This would be bad.
 
+I could prove things that are not true. 
 
+This would be baaaaaad.
 
 
 --> what would it mean if a proof system was incomplete?
@@ -178,7 +178,8 @@ This would be bad.
 There would be true (valid) argument that I couldn't prove 
 with my proof system.
 
-
+There would be true (valid) arguments that I could not
+    prove with my proof system. 
 
 
 Propositional logic is both SOUND and COMPLETE.
@@ -218,21 +219,19 @@ A set is an unordered collection of elements
 
 Example: A = {1,4,7,11,20}
 
-    1 ∈ A
-    2 ∉ A
+    1 ? 
+    2 ?
 
 
 
 - Common sets in math:
 
-    ℕ: natural numbers (positive integers)
-        1, 2, 3, ...
-    ℤ: All integers (-5, 4, ..., 0, 1, 2, ...)
-    ℚ: Rational numbers (rational number means: p/q where p and q are integers
-        and q != 0)
-    ℝ: real numbers (Numbers with decimals)
-    ℂ: Complex numbers (NOT LOOKING AT THIS IN THIS CLASS)
-    ∅: Empty set
+    ℕ: 
+    ℤ: 
+    ℚ: 
+    ℝ: 
+    ℂ: 
+    ∅: 
 
 ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ ⊂ ℂ
 
@@ -248,20 +247,16 @@ Set builder notation.
 
 {x: x ∈ ℕ, 5 ≤ x ≤ 10}
 
-{5, 6, 7, 8, 9, 10}
-
 
 
 {k : k is a letter in "abracadabra"}
 
 {a, b, r, c, d}
 
-
+{a,b,r,c,d}
 
 
 {x : x = 2k,  k ∈ ℕ}
-
-{2, 4, 6, 8, 10, ...}
 
 
 
@@ -270,14 +265,18 @@ Set builder notation.
 
 {0, 1, 4, 9, 16, ...}
 
-
+{0, 1, 4, 9, 16, ...}
 
 
 {n : n = 3a + 1, a ∈ ℕ, 1 ≤ a ≤ 4}
 
 { 4, 7, 10, 13}
 
+{4, 7, 10, 13}
 
+//////////////////////////////////////
+
+<-- stopped here, will continue on Thursday
 
 //////////////////////////////////////
 
